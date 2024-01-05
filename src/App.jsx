@@ -36,7 +36,7 @@ function App() {
       </header>
 
       <main>
-        <Home />
+        <Home name="HomeBox" />
       </main>
     </div>
   );
