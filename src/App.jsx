@@ -9,9 +9,8 @@ function App() {
     setCount((prevCount) => prevCount + 1);
   };
 
-  const decrement = () => {
-    setCount((prevCount) => prevCount - 1);
-  };
+  const decrement = () =>
+    setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
 
   return (
     <div className="App">
