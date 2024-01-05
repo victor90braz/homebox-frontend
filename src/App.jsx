@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
+import Home from "./components/Home";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -33,6 +34,10 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <main>
+        <Home />
+      </main>
     </div>
   );
 }
