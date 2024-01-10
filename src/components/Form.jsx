@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Form() {
+export default function Form(props) {
   const containerStyle = {
     maxWidth: "400px",
     margin: "auto",
@@ -39,7 +39,7 @@ export default function Form() {
 
   return (
     <div className="todo-app" style={containerStyle}>
-      <h2>Todo App</h2>
+      <h2>{props.title}</h2>
 
       <form action="">
         <input

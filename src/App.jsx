@@ -10,7 +10,7 @@ function App() {
       </header>
 
       <main>
-        <Form />
+        <Form title="Todo App" />
       </main>
     </div>
   );
