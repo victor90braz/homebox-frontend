@@ -67,7 +67,7 @@ export default function Form(props) {
     <div className="todo-app" style={containerStyle}>
       <h2>{props.title}</h2>
 
-      <form action="">
+      <form action="/endpoint">
         <input
           type="text"
           className="todo-input"
