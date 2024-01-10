@@ -62,17 +62,34 @@ export default function Form(props) {
     },
   ];
   const [todos, setTodos] = useState(initialState);
+  const [todoInput, setTodoInput] = useState("");
+
+  const addTodo = (event) => {
+    event.preventDefault();
+    setTodos([
+      ...todos,
+      {
+        id: 4,
+        title: todoInput,
+        isComplete: false,
+      },
+    ]);
+  };
+
+  const handleInput = (event) => setTodoInput(event.target.value);
 
   return (
     <div className="todo-app" style={containerStyle}>
       <h2>{props.title}</h2>
 
-      <form action="/endpoint">
+      <form action="#" onSubmit={addTodo}>
         <input
           type="text"
           className="todo-input"
           placeholder="what do you need to do?"
           style={inputStyle}
+          value={todoInput}
+          onChange={handleInput}
         />
       </form>
 
