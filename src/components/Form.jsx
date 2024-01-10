@@ -34,6 +34,7 @@ export default function Form() {
   const othersButtonContainer = {
     display: "flex",
     gap: "10px",
+    alignItems: "center",
   };
 
   return (
@@ -74,7 +75,7 @@ export default function Form() {
 
       <hr />
 
-      <div>
+      <div style={othersButtonContainer}>
         <button style={buttonStyle}>Check all</button>
         <span>3 items remaining</span>
       </div>
