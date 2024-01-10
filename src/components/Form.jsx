@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Form(props) {
   const containerStyle = {
@@ -37,6 +37,25 @@ export default function Form(props) {
     alignItems: "center",
   };
 
+  const initialState = [
+    {
+      id: 1,
+      title: "Finish React Series",
+      isComplete: false,
+    },
+    {
+      id: 2,
+      title: "Go Grocery",
+      isComplete: true,
+    },
+    {
+      id: 3,
+      title: "Take Over World",
+      isComplete: false,
+    },
+  ];
+  const [todos, setTodos] = useState(initialState);
+
   return (
     <div className="todo-app" style={containerStyle}>
       <h2>{props.title}</h2>
@@ -51,26 +70,18 @@ export default function Form(props) {
       </form>
 
       <ul className="todo-list" style={todoListStyle}>
-        <li className="todo-item-container" style={todoItemStyle}>
-          <div className="todo-item">
-            <input type="checkbox" />
-            <span className="todo-item-label">Finish React Series</span>
-          </div>
-        </li>
-
-        <li className="todo-item-container" style={todoItemStyle}>
-          <div className="todo-item">
-            <input type="checkbox" />
-            <span className="todo-item-label">Finish React Series</span>
-          </div>
-        </li>
-
-        <li className="todo-item-container" style={todoItemStyle}>
-          <div className="todo-item">
-            <input type="checkbox" />
-            <span className="todo-item-label">Finish React Series</span>
-          </div>
-        </li>
+        {todos.map((todo, index) => (
+          <li
+            key={todo.id}
+            className="todo-item-container"
+            style={todoItemStyle}
+          >
+            <div className="todo-item">
+              <input type="checkbox" />
+              <span className="todo-item-label">{todo.title}</span>
+            </div>
+          </li>
+        ))}
       </ul>
 
       <hr />
