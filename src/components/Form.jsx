@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import DeleteButton from "./DeleteButton";
 
 export default function Form(props) {
   const containerStyle = {
@@ -35,6 +36,12 @@ export default function Form(props) {
     display: "flex",
     gap: "10px",
     alignItems: "center",
+  };
+
+  const todoItem = {
+    display: "flex",
+    alignItems: "center",
+    gap: "15px",
   };
 
   const initialState = [
@@ -76,9 +83,10 @@ export default function Form(props) {
             className="todo-item-container"
             style={todoItemStyle}
           >
-            <div className="todo-item">
+            <div className="todo-item" style={todoItem}>
               <input type="checkbox" />
               <span className="todo-item-label">{todo.title}</span>
+              <DeleteButton />
             </div>
           </li>
         ))}
