@@ -63,20 +63,28 @@ export default function Form(props) {
   ];
   const [todos, setTodos] = useState(initialState);
   const [todoInput, setTodoInput] = useState("");
+  const [idForTodo, setIdForTodo] = useState(4);
 
   const addTodo = (event) => {
     event.preventDefault();
     setTodos([
       ...todos,
       {
-        id: 4,
+        id: setIdForTodo,
         title: todoInput,
         isComplete: false,
       },
     ]);
+
+    setTodoInput("");
+    setIdForTodo((preventIdForTodo) => preventIdForTodo + 1);
   };
 
   const handleInput = (event) => setTodoInput(event.target.value);
+
+  const deleteToDo = (id) => {
+    console.log(`deleting  ${id}`);
+  };
 
   return (
     <div className="todo-app" style={containerStyle}>
@@ -103,7 +111,7 @@ export default function Form(props) {
             <div className="todo-item" style={todoItem}>
               <input type="checkbox" />
               <span className="todo-item-label">{todo.title}</span>
-              <DeleteButton />
+              <DeleteButton onClick={() => deleteToDo(todo.id)} />
             </div>
           </li>
         ))}

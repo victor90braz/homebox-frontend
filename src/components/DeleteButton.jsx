@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function DeleteButton() {
+export default function DeleteButton({ onClick }) {
   return (
-    <button class="bin-button">
+    <button class="bin-button" onClick={onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
