@@ -110,7 +110,13 @@ export default function Form(props) {
           >
             <div className="todo-item" style={todoItem}>
               <input type="checkbox" />
-              <span className="todo-item-label">{todo.title}</span>
+              <span
+                className={`todo-item-label ${
+                  todo.isComplete ? "line-through" : ""
+                }`}
+              >
+                {todo.title}
+              </span>
               <DeleteButton onClick={() => deleteToDo(todo.id)} />
             </div>
           </li>
