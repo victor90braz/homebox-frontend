@@ -70,7 +70,7 @@ export default function Form(props) {
     setTodos([
       ...todos,
       {
-        id: setIdForTodo,
+        id: idForTodo,
         title: todoInput,
         isComplete: false,
       },
@@ -83,7 +83,7 @@ export default function Form(props) {
   const handleInput = (event) => setTodoInput(event.target.value);
 
   const deleteToDo = (id) => {
-    console.log(`deleting  ${id}`);
+    setTodos([...todos].filter((todo) => todo.id !== id));
   };
 
   return (
